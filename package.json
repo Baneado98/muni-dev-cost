@@ -1,0 +1,78 @@
+{
+  "name": "muni-dev-cost-mcp",
+  "version": "0.18.0",
+  "mcpName": "io.github.Baneado98/muni-dev-cost",
+  "description": "US municipal DEVELOPMENT COST intelligence for AI agents — the impact/development fees, water & sewer tap (connection) fees and capital-recovery charges a real-estate developer must pay to build, aggregated and NORMALIZED per jurisdiction from public government fee schedules. get_dev_costs is free (the aggregated number per jurisdiction or address); the deep tools are premium (fee-by-fee breakdown, multi-jurisdiction comparison, water/sewer detail by meter size, a development cost estimate). The aggregation engine, the normalized fee KB and the accumulating per-jurisdiction cache run server-side; this package is a thin client to https://muni-dev-cost-mcp.vercel.app.",
+  "type": "module",
+  "bin": {
+    "muni-dev-cost-mcp": "dist/mcp.js"
+  },
+  "main": "dist/mcp.js",
+  "files": [
+    "dist/mcp.js",
+    "dist/mcpServer.js",
+    "dist/types.js",
+    "README.md",
+    "LICENSE",
+    "server.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Baneado98/muni-dev-cost.git"
+  },
+  "homepage": "https://muni-dev-cost-mcp.vercel.app",
+  "bugs": {
+    "url": "https://github.com/Baneado98/muni-dev-cost/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "start:mcp": "node dist/mcp.js",
+    "start:http": "node dist/server.js",
+    "dev:mcp": "tsx src/mcp.ts",
+    "dev:http": "tsx src/server.ts",
+    "test": "npm run build && node dist/test/run.js",
+    "test:moat": "node scripts/lockproof.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "impact-fees",
+    "development-impact-fee",
+    "tap-fee",
+    "connection-fee",
+    "capital-recovery-fee",
+    "system-development-charge",
+    "sdc",
+    "water-impact-fee",
+    "sewer-impact-fee",
+    "wastewater-impact-fee",
+    "development-cost",
+    "real-estate-development",
+    "feasibility",
+    "pro-forma",
+    "land-development",
+    "municipal-fees",
+    "permit-fees",
+    "x402",
+    "ai-agent",
+    "real-estate"
+  ],
+  "author": "muni-dev-cost",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "stripe": "^17.7.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.0",
+    "express": "^4.21.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "x402-express": "^1.2.0"
+  }
+}

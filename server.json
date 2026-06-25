@@ -1,0 +1,16 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Baneado98/muni-dev-cost",
+  "description": "US municipal development cost: aggregated impact + water/sewer tap fees per jurisdiction",
+  "version": "0.18.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://muni-dev-cost-mcp.vercel.app/mcp"
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/Baneado98/muni-dev-cost",
+    "source": "github"
+  }
+}

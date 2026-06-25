@@ -1,0 +1,20 @@
+# Smithery configuration for muni-dev-cost
+# https://smithery.ai/docs
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      MUNI_DEV_COST_KEY:
+        type: string
+        description: "Optional prepaid Pro key (buy at /pro/checkout with a card) to unlock the 13 premium tools (fee breakdown, compare_jurisdictions, water/sewer by meter size, project estimates, cost trends, state roll-ups, and the rest) without per-call x402 payment."
+  commandFunction: |-
+    (config) => ({
+      command: "node",
+      args: ["dist/mcp.js"],
+      env: {
+        ...(config.MUNI_DEV_COST_KEY ? { MUNI_DEV_COST_KEY: config.MUNI_DEV_COST_KEY } : {})
+      }
+    })
+build:
+  dockerfile: Dockerfile
