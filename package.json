@@ -1,6 +1,6 @@
 {
   "name": "muni-dev-cost-mcp",
-  "version": "0.18.0",
+  "version": "0.18.1",
   "mcpName": "io.github.Baneado98/muni-dev-cost",
   "description": "US municipal DEVELOPMENT COST intelligence for AI agents — the impact/development fees, water & sewer tap (connection) fees and capital-recovery charges a real-estate developer must pay to build, aggregated and NORMALIZED per jurisdiction from public government fee schedules. get_dev_costs is free (the aggregated number per jurisdiction or address); the deep tools are premium (fee-by-fee breakdown, multi-jurisdiction comparison, water/sewer detail by meter size, a development cost estimate). The aggregation engine, the normalized fee KB and the accumulating per-jurisdiction cache run server-side; this package is a thin client to https://muni-dev-cost-mcp.vercel.app.",
   "type": "module",
@@ -12,6 +12,7 @@
     "dist/mcp.js",
     "dist/mcpServer.js",
     "dist/types.js",
+    "dist/version.js",
     "README.md",
     "LICENSE",
     "server.json"
